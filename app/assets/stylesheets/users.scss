@@ -1,0 +1,55 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+h1{
+  font-size:20px;
+  background-color:#fbc25b;
+  text-align:center;
+}
+
+h3{
+  font-size:20px;
+  text-align:center;
+}
+
+.schedule_btn{
+  display: flex;
+  justify-content: flex-end; 
+}
+
+.schedule_main{
+  display: flex;
+  justify-content: center; 
+}
+
+.schedule_sub{
+  display: flex;
+  justify-content: center; 
+}
+
+.new_schedule{
+display: inline-block;
+ background-color:rgba(120,141,204,0.5);
+ font-color:black;
+ padding:5px;
+ margin-right:10px;
+}
+
+.information{
+display: flex;
+justify-content: space-between;
+}
+
+.information_1{
+padding:10px;
+}
+
+.information_2{
+ display: flex;
+ justify-content: space-between;
+}
+
+.information_2 > div {
+ padding: 10px;
+ }
