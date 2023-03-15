@@ -1,0 +1,59 @@
+<div class="schedule">
+<h3>予定一覧</h3>
+
+ <% if flash[:notice] %>
+   <p class="notice"><%= flash[:notice] %></p>
+ <% end %>
+
+<div class="schedule_btn">
+<%= link_to (:new_scheduler) do%><button class="new_schedule">新規登録</button>
+<%end%>
+</div>
+
+<table>
+<div class="schedule_main">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>タイトル</th>
+      <th>開始日</th>
+      <th>終了日</th>
+      <th>終日</th>
+      <th>更新日時</th>   
+      <th>詳細</th>   
+      <th>編集</th>
+      <th>削除</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schedulers.each do |scheduler| %>
+      <tr>
+        <td><%= scheduler.id %></td>
+        <td><%= scheduler.title%></td>
+        <td><%= scheduler.startday.strftime("%Y/%m/%d")  %></td>
+        <td><%= scheduler.endday.strftime("%Y/%m/%d")   %></td>
+        <td>
+        <% if scheduler.allday == "1" %>○
+        <% end%></td>
+        <td><%= scheduler.updated_at.strftime("%Y/%m/%d %H:%M") %></td>
+        <td>
+         <%= link_to "詳細", scheduler %>
+       </td>
+         <td>
+          <%= link_to "編集", [:edit, scheduler] %>
+         </td>
+         <td>
+           <%=link_to "削除",scheduler,method: :delete,data:{confirm:"予定を削除しますか？"} %>
+         </td>
+      </tr>
+    <% end %>
+  </tbody>
+</div>
+
+</table>
+  <div class ="information">
+    <a class ="information_1"><%= "合計予定数：#{@schedulers.count}件" %></a>
+    <a class ="information_2"><%= "本日の日付：#{Date.today}" %></a>
+  </div>
+</div>

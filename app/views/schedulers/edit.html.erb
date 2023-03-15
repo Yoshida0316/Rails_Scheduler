@@ -1,0 +1,36 @@
+ <h3>スケジュール編集</h3>
+ <div class="schedule_sub">
+ <%= render "shared/error", obj: @scheduler %> 
+
+<%= form_with model: @scheduler do |f| %>
+  <table>
+    <tr>
+      <th><%= f.label :title ,"タイトル" %></th>
+      <td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :startday ,"開始日" %></th>
+      <td><%= f.date_field :startday %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :endday ,"終了日" %></th>
+      <td><%= f.date_field :endday %></td>
+    </tr>
+    </table>
+    
+      <%= f.check_box :allday %> 
+      <%= f.label :allday ,"終日の場合はチェックを入れてください" %>
+
+    <table>
+    <tr>
+      <th><%= f.label :detail,"詳細" %></th>
+      <td><%= f.text_area :detail %></td>
+    </tr>
+  </table>
+
+    <ul>
+      <li><%= f.submit "編集を完了し保存する" %></li>
+      <li><%= link_to "キャンセル", :schedulers %></li>
+    </ul>
+<% end %>
+</div>
