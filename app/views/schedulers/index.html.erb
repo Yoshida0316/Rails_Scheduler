@@ -6,7 +6,7 @@
  <% end %>
 
 <div class="schedule_btn">
-<%= link_to (:new_user) do%><button class="new_schedule">新規登録</button>
+<%= link_to (:new_scheduler) do%><button class="new_schedule">新規登録</button>
 <%end%>
 </div>
 
@@ -27,24 +27,24 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+    <% @schedulers.each do |scheduler| %>
       <tr>
-        <td><%= user.id %></td>
-        <td><%= user.title%></td>
-        <td><%= user.startday.strftime("%Y/%m/%d")  %></td>
-        <td><%= user.endday.strftime("%Y/%m/%d")   %></td>
+        <td><%= scheduler.id %></td>
+        <td><%= scheduler.title%></td>
+        <td><%= scheduler.startday.strftime("%Y/%m/%d")  %></td>
+        <td><%= scheduler.endday.strftime("%Y/%m/%d")   %></td>
         <td>
-        <% if user.allday == "1" %>○
+        <% if scheduler.allday == "1" %>○
         <% end%></td>
-        <td><%= user.updated_at.strftime("%Y/%m/%d %H:%M") %></td>
+        <td><%= scheduler.updated_at.strftime("%Y/%m/%d %H:%M") %></td>
         <td>
-         <%= link_to "詳細", user %>
+         <%= link_to "詳細", scheduler %>
        </td>
          <td>
-          <%= link_to "編集", [:edit, user] %>
+          <%= link_to "編集", [:edit, scheduler] %>
          </td>
          <td>
-           <%=link_to "削除",user,method: :delete,data:{confirm:"予定を削除しますか？"} %>
+           <%=link_to "削除",scheduler,method: :delete,data:{confirm:"予定を削除しますか？"} %>
          </td>
       </tr>
     <% end %>
@@ -53,7 +53,7 @@
 
 </table>
   <div class ="information">
-    <a class ="information_1"><%= "合計予定数：#{@users.count}件" %></a>
+    <a class ="information_1"><%= "合計予定数：#{@schedulers.count}件" %></a>
     <a class ="information_2"><%= "本日の日付：#{Date.today}" %></a>
   </div>
 </div>

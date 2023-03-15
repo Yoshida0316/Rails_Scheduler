@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+class Scheduler < ApplicationRecord
   validates :title, presence: true,length: {maximum:20 }
   validates :startday, presence: true
   validates :endday, presence: true  

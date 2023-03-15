@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_13_100130) do
+ActiveRecord::Schema.define(version: 2023_03_15_000940) do
 
-  create_table "users", force: :cascade do |t|
+  create_table "schedulers", force: :cascade do |t|
     t.string "title"
     t.datetime "startday", null: false
     t.datetime "endday", null: false

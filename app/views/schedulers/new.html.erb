@@ -2,9 +2,9 @@
 <h3>ユーザー新規作成</h3>
 
 <div class="schedule_sub">
- <%= render "shared/error", obj: @user %> 
+ <%= render "shared/error", obj: @scheduler %> 
 
-<%= form_with model: @user do |f| %>
+<%= form_with model: @scheduler do |f| %>
   <table>
     <tr>
       <th><%= f.label :title ,"タイトル" %></th>
@@ -34,7 +34,7 @@
   
     <ul>
       <li><%= f.submit "保存"%></li>
-      <li><%= link_to "キャンセル", :users %></li>
+      <li><%= link_to "キャンセル", :schedulers %></li>
     </ul>
   
   <%end %>
